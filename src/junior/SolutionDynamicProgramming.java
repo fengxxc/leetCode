@@ -1,7 +1,5 @@
 package junior;
 
-import org.junit.Test;
-
 /**
  * 动态规划
  * @author fengxxc
@@ -17,7 +15,7 @@ public class SolutionDynamicProgramming {
 	 * @param n
 	 * @return
 	 */
-	public int climbStairs(int n) {
+	public static int climbStairs(int n) {
 		// 递归	效率低
         /*if (n < 3) return n;
         return climbStairs(n-2) + climbStairs(n-1);*/
@@ -45,8 +43,8 @@ public class SolutionDynamicProgramming {
 		}
 		return arr[n];
 	}
-	@Test
-	public void test_climbStairs() {
+
+	public static void main() {
 		int climbStairs = climbStairs(44);
 		System.out.println(climbStairs);
 	}

@@ -2,7 +2,6 @@ package junior;
 
 import java.util.Arrays;
 
-import org.junit.Test;
 
 /**
  * 排序和搜索
@@ -21,7 +20,7 @@ public class SolutionSortAndSearch {
 	 * @param nums2
 	 * @param n
 	 */
-	public void merge(int[] nums1, int m, int[] nums2, int n) {
+	public static void merge(int[] nums1, int m, int[] nums2, int n) {
 		int i = m-1, j = n-1, index = m+n-1;
 		while (i >= 0 && j >= 0)
 			if (nums1[i] > nums2[j])
@@ -31,8 +30,8 @@ public class SolutionSortAndSearch {
 		while (j >= 0)
 			nums1[index--] = nums2[j--];
     }
-	@Test
-	public void test_merge() {
+
+	public static void test_merge() {
 		int m = 6;
 		int n = 6;
 		int[] nums1 = new int[12];
@@ -67,5 +66,9 @@ public class SolutionSortAndSearch {
 		merge(nums1, m, nums2, n);
 //		[1, 2]
 		System.out.println(Arrays.toString(nums1));*/
+	}
+
+	public static void main(String[] args) {
+		test_merge();
 	}
 }

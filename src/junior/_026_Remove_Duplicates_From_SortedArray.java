@@ -2,8 +2,6 @@ package junior;
 
 import java.util.Arrays;
 
-import org.junit.Test;
-
 /**
  * 26. Remove Duplicates from Sorted Array
  * 不要另外定义一个数组，您必须通过用 O(1) 额外内存原地修改输入的数组来做到这一点。
@@ -29,8 +27,7 @@ public class _026_Remove_Duplicates_From_SortedArray {
         return newLength;
     }
 	
-	@Test
-	public void testRemoveDuplicates() {
+	public static void main() {
 		long startTime = System.currentTimeMillis();
 		int[] arr = new int[]{1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 6, 6, 9, 9, 9, 11, 12, 12, 12, 13, 14, 14, 14, 14, 14, 14, 14, 14, 23, 23, 23, 23, 23, 23, 23, 26, 26, 26, 26, 26, 26, 44, 44, 44, 66, 245, 248, 290, 290, 345};
 		int length = new _026_Remove_Duplicates_From_SortedArray().removeDuplicates(arr);

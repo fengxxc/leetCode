@@ -2,8 +2,6 @@ package junior;
 
 import java.util.Arrays;
 
-import org.junit.Test;
-
 /**
  * 189. Rotate Array
  * 旋转数组
@@ -19,7 +17,7 @@ public class _189_RotateArray {
 	 * @param nums
 	 * @param k
 	 */
-	public void rotate(int[] nums, int k) {
+	public static void rotate(int[] nums, int k) {
 		int len = nums.length;
 		if (k == 0 || len == 0 || len == 1 || k == len) return;
 		int _k = k >= len? (k % len) : k;
@@ -50,8 +48,7 @@ public class _189_RotateArray {
 			}
 		}
 	}
-	@Test
-	public void test_rotate() {
+	public static void main() {
 //		int[] nums = new int[]{1,-2,3,4,5,6,7,8};
 //		int[] nums = new int[]{-1};
 //		int[] nums = new int[]{1, 2};

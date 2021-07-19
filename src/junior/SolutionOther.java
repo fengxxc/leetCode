@@ -1,7 +1,5 @@
 package junior;
 
-import org.junit.Test;
-
 public class SolutionOther {
 	/**
 	 * 位1的个数
@@ -29,7 +27,7 @@ public class SolutionOther {
 		return res;
 	}
 	// 网上查找的算法(1ms) https://segmentfault.com/a/1190000007492029
-	public int hammingWeight3(int n) {
+	public static int hammingWeight3(int n) {
 		n = n - ((n>>1) & 0x55555555);
         n = (n & 0x33333333) + ((n>>2) & 0x33333333);
         n = (n + (n>>4)) & 0x0f0f0f0f;
@@ -37,8 +35,7 @@ public class SolutionOther {
         n = n + (n>>16);
         return n & 0x3f;
 	}
-	@Test
-	public void test_hammingWeight() {
+	public static void main() {
 		int hammingWeight = hammingWeight3(11);
 		System.out.println(hammingWeight);
 	}

@@ -3,8 +3,6 @@ package junior;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
-
 /**
  * 929. Unique Email Addresses
  * https://leetcode.com/problems/unique-email-addresses/
@@ -15,7 +13,7 @@ import org.junit.Test;
  *
  */
 public class _929_Unique_Email_Addresses {
-	public int numUniqueEmails(String[] emails) {
+	public static int numUniqueEmails(String[] emails) {
 		Set<String> actualEmails = new HashSet<String>();
 		for (int i = 0; i < emails.length; i++) {
 			String e = emails[i];
@@ -32,8 +30,7 @@ public class _929_Unique_Email_Addresses {
 		return actualEmails.size();
 	}
 	
-	@Test
-	public void test() {
+	public static void main() {
 		int count = numUniqueEmails(new String[]{"test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com","testemaildavid@lee.tcode.com"});
 		System.out.println(count);
 	}

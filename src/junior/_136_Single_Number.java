@@ -1,7 +1,5 @@
 package junior;
 
-import org.junit.Test;
-
 /**
  * 136. Single Number
  * 只出现一次的数字
@@ -25,8 +23,7 @@ public class _136_Single_Number {
             result = result ^ nums[i];
         return result;
     }
-	@Test
-	public void testSingleNumber() {
+	public static void main() {
 		int[] arr = { 0, 1, 3, 5, 1, 0, 5 };  
 		System.out.println("test_singleNumber:");
         System.out.println(new _136_Single_Number().singleNumber(arr));  

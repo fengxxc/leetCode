@@ -1,9 +1,7 @@
 package junior;
 
-import org.junit.Test;
-
 public class NnumJewelsInStones {
-	public int numJewelsInStones(String J, String S) {
+	public static int numJewelsInStones(String J, String S) {
         char[] JChar = J.toCharArray();
         String nS = S;
         for (int i = 0; i < JChar.length; i++) {
@@ -12,8 +10,7 @@ public class NnumJewelsInStones {
         return S.length() - nS.length();
     }
 	
-	@Test
-	public void test_numJewelsInStones() {
+	public static void main() {
 		String J = "aA";
 		String S = "aAAbbbb";
 		int count = numJewelsInStones(J, S);
