@@ -53,7 +53,7 @@ import java.util.BitSet;
  * 给定数独序列只包含数字 1-9 和字符 '.' 。
  * 给定数独永远是 9x9 形式的。
  */
-public class _36_Valid_Sudoku {
+public class _036_Valid_Sudoku {
     public static boolean isValidSudoku(char[][] board) {
         BitSet[] row = new BitSet[9];
         BitSet[] col = new BitSet[9];

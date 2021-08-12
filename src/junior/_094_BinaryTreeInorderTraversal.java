@@ -58,7 +58,7 @@ import java.util.List;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/binary-tree-inorder-traversal
  */
-public class _94_BinaryTreeInorderTraversal {
+public class _094_BinaryTreeInorderTraversal {
     // 递归
     public static List<Integer> inorderTraversal(TreeNode root) {
         final List<Integer> res = new ArrayList<>();

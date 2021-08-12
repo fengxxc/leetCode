@@ -15,7 +15,7 @@ import java.util.List;
  * 	"()()()"
  * ]
  */
-public class _22_GenerateParentheses_ {
+public class _022_GenerateParentheses_ {
 	public static List<String> generateParenthesis(int n) {
 		// TODO
 		return null;

@@ -45,7 +45,7 @@ import java.util.Arrays;
  *   [16, 7,10,11]
  * ]
  */
-public class _48_Rotate_Image {
+public class _048_Rotate_Image {
     public static void rotate(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0)
             return;
