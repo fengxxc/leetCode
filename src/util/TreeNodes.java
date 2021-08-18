@@ -111,51 +111,38 @@ public class TreeNodes {
             }
             res.append('\n');
             TreeNodePlus last = null;
+            // 下行的斜杠
+            StringBuffer nextRowSlash = new StringBuffer();
             for (TreeNodePlus treeNodePlus : row) {
-                int spaceCount = 0;
-                if (last == null) {
-                    spaceCount = treeNodePlus.pos + offset + paddingLeft;
-                } else {
-                    spaceCount = treeNodePlus.pos - last.pos - 1 - (String.valueOf(last.node.val).length() - 1);
-                }
+                int spaceCount = (last == null) ? treeNodePlus.pos + offset + paddingLeft
+                                                : treeNodePlus.pos - last.pos - String.valueOf(last.node.val).length();
                 last = treeNodePlus;
-                for (int j = 0; j < spaceCount; j++) {
-                    res.append(' ');
-                }
+                res.append(makeBlank(spaceCount));
                 res.append(treeNodePlus.node.val);
-            }
-            // print '/' and '\'
-            last = null;
-            res.append('\n');
-            for (TreeNodePlus treeNodePlus : row) {
-                int spaceCount = 0;
-                if (last == null) {
-                    spaceCount = treeNodePlus.pos + offset + paddingLeft;
-                } else {
-                    spaceCount = treeNodePlus.pos - last.pos;
-                }
-                last = treeNodePlus;
-                for (int j = 0; j < spaceCount - LOOSE_X/2; j++) {
-                    res.append(" ");
-                }
-                if (treeNodePlus.node.left != null) {
-                    res.append("/");
-                } else {
-                    res.append(" ");
-                }
+                nextRowSlash.append(makeBlank(spaceCount - 1));
+                nextRowSlash.append(treeNodePlus.node.left != null ? '/' : ' ');
                 if (treeNodePlus.node.right != null) {
-                    for (int j = 0; j < LOOSE_X - 1; j++) {
-                        res.append(" ");
-                    }
-                    res.append("\\");
+                    nextRowSlash.append(makeBlank(LOOSE_X - 1)).append('\\');
                 }
             }
+            res.append('\n').append(nextRowSlash);
         }
         return res.toString();
     }
 
     public static String toString(TreeNode root) {
         return toString(root, 0);
+    }
+
+    /**
+     * 生成count个空格
+     * @param count
+     * @return
+     */
+    public static final String makeBlank(int count) {
+        final StringBuffer res = new StringBuffer();
+        for (int i = 0; i < count; i++) res.append(' ');
+        return res.toString();
     }
 
     static class TreeNodePlus {
@@ -181,5 +168,6 @@ public class TreeNodes {
         System.out.println(TreeNodes.toString(TreeNodes.instance(new Integer[]{3, 9, 20, null, null, 15, 7})));
         System.out.println(TreeNodes.toString(TreeNodes.instance(new Integer[]{1, 2, 2, 3, null, null, 3, 4, null, null, 4})));
         System.out.println(TreeNodes.toString(TreeNodes.instance(new Integer[]{1, 2, 2, 3, 3, null, null, 4, 4})));
+        System.out.println(TreeNodes.toString(TreeNodes.instance(new Integer[]{5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1})));
     }
 }
