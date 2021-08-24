@@ -78,9 +78,9 @@ public class TreeNodes {
      *                  /   \
      *                 15     7
      */
-    public static String toString(TreeNode root, int paddingLeft) {
+    public static String toString(TreeNode root, int paddingLeft, Integer looseX) {
         // 横向松散程度
-        int LOOSE_X = 3;
+        int LOOSE_X = looseX != null ? looseX : 3;
 
         // 偏移量
         int offset = 0;
@@ -131,7 +131,7 @@ public class TreeNodes {
     }
 
     public static String toString(TreeNode root) {
-        return toString(root, 0);
+        return toString(root, 0, null);
     }
 
     /**
