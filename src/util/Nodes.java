@@ -18,7 +18,7 @@ public class Nodes {
      * @param arr
      * @return
      */
-    public static final Node instance(Integer[] arr) {
+    public static final Node instance(Integer ...arr) {
         if (arr == null || arr.length == 0) {
             return null;
         }
