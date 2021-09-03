@@ -16,7 +16,7 @@ public class TreeNodes {
      * @param arr
      * @return
      */
-    public static TreeNode instance(Integer[] arr) {
+    public static TreeNode instance(Integer ...arr) {
         if (arr[0] == null) {
             return null;
         }
