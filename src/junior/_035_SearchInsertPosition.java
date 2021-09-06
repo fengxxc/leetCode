@@ -44,6 +44,12 @@ package junior;
  * 链接：https://leetcode-cn.com/problems/search-insert-position
  */
 public class _035_SearchInsertPosition {
+    /**
+     * 2021/08/11 15:06 一周目
+     * @param nums
+     * @param target
+     * @return
+     */
     public int searchInsert(int[] nums, int target) {
         int l = 0, r = nums.length - 1;
         while (l <= r) {
@@ -65,7 +71,27 @@ public class _035_SearchInsertPosition {
         int target = 2;
         // int target = 7;
         // int target = 0;
-        final int i = new _035_SearchInsertPosition().searchInsert(nums, target);
+        // final int i = new _035_SearchInsertPosition().searchInsert(nums, target);
+        final int i = new _035_SearchInsertPosition().searchInsert2(nums, target);
         System.out.println(i);
+    }
+
+    /**
+     * 2021/09/06 16:14 二周目
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int searchInsert2(int[] nums, int target) {
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int m = l + (r - l)/2;
+            if (target <= nums[m]) {
+                r = m - 1;
+            } else {
+                l = m + 1;
+            }
+        }
+        return l;
     }
 }
