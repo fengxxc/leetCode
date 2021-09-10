@@ -23,7 +23,7 @@ public class Nodes {
             return null;
         }
         if (arr.length == 1) {
-            return new Node();
+            return new Node(arr[0]);
         }
         Node cur = new Node(-1, new ArrayList<>());
         final Node root = cur;
